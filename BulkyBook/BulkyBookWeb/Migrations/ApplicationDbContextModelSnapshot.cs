@@ -33,7 +33,7 @@ namespace BulkyBookWeb.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DisplayOrder")
+                    b.Property<int>("ContactNumber")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Category2>
+
+<div style="display: flex">
+    <div>
+    @foreach (var data in Model)
+    {
+        <div>
+            @data.Name
+            <a asp-controller="Category" asp-action="ShowAllNames" asp-route-id="@data.Id" class="btn btn-secondary">
+                Show Contact info
+            </a>
+        </div>
+    }
+    </div>
+    <div class="btn btn-primary"> 
+        @TempData["SelectedContact"]
+    </div>
+</div>

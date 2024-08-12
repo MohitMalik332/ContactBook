@@ -1,0 +1,32 @@
+﻿@model Category
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Contact</h2>
+            <hr />
+        </div>
+        @*<div asp-validation-summary="All"></div>*@ @*This will show all the errors in a summary at the top of the page.*@
+        <div class="mb-3">
+            <label asp-for="Name"></label> @*It will print the value of name from Category Models *@
+            @*That's why we dont have to write the value inside label tags*@
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span> @*It will validate that the "Name" under Create contact will not be empty, if empty show a default error msg*@
+        </div>
+        <div class="mb-3">
+            <label asp-for="ContactNumber"></label>
+            <input asp-for="ContactNumber" class="form-control" />
+            <span asp-validation-for="ContactNumber" class="text-danger"></span> @*It will validate that the "Contact No." under Create contact will not be empty, if empty show a default error msg*@
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
